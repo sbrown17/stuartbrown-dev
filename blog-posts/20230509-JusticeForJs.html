@@ -3,14 +3,46 @@
   <link rel="stylesheet" href="../main.css">
 </head>
 <body>
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
-    <a href="resume.html">Resume</a>
+    <a href="../index.html">Home</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../resume.html">Resume</a>
     <hr>
     <h1>Justice for JavaScript:</h1>
     <h2>How an unintuitive method for an unintuitive language actually makes sense</h2>
 
-    <p>JavaScript is a notoriously odd language. Maybe in part because it's one of the number one beginner languages, but also because of the fact that it was created in about two weeks and has never looked back since. Everytime someone comes across something odd or some seemingly unintended consequence of JavaScript's design it brings up a "Wat?" moment.</p>
-    <p>However, there is one method that gets overlooked or hand waved away as a peculiarity of the language that simply isn't so. I have seen veterans and beginners alike fall pray to this falsity, myself included. I have an old mentor to thank for the clairvoyance I now have on this topic:</p>
-    <p>.every()</p>
-    <p>This may seem like a simple method, used to match a comparator against elements in an array, a slight misconception of the logical origins of this method will leave a nasty bug that will break in ways that you may never find until it's too late.</p>
+    <h3>What are you going on about?</h3>
+    <p>JavaScript is a notoriously odd language and a reputation to match it. Maybe in part because it's one of the most popular languages, but also because of its hasty creation and original lack of features. Everytime someone comes across something odd or some seemingly unintended consequence of JavaScript's design it brings up a <a href="https://www.destroyallsoftware.com/talks/wat">"Wat?"</a> moment.</p>
+    <p>However, there is one method that gets overlooked or hand waved away as a peculiarity of the language that simply isn't so. I have seen veterans and beginners alike fall pray to this falsity, myself included. I have an old mentor to thank for the clairvoyance I now have on this topic: <b>.every()</b></p>
+    <h3>What about it?</h3>
+    <p>This may seem like a simple method on the surface. It's used to match a comparator against elements in an array, but a slight misconception of this implementation will leave a nasty bug that will break in ways almost undetectable to the unknowing eye.</p>
+    <p><b>Example:</b> Let's say you wanted to check an an array of phone numbers that a user has stored with your website. If they don't have any, we should have the check return false so we can prompt them to enter one.</p>
+    <p>Simple enough. <code>let hasPhoneNumber = phoneNumberArray.every(x => isPhoneNumber(x))</code></p>
+    <p>Perfect! Wait... what do you mean new customers can't enter their phone numbers? That doesn't make any sense I specifically che-... wait a minute.</p>
+    <p>.every() returns true on <b>EMPTY ARRAYS?!</b></p>
+    <p>What now?!</p>
+    <h3>Don't Panic!</h3>
+    <p>As the great Yoda once said. "There is another."</p>
+    <h3>Enter: .some()</h3>
+    <p>First things first, lets fix that problem! <code>let hasPhoneNumber = phoneNumberArray.every(x => isPhoneNumber(x))</code></p>
+    <p>Much better, an empty array is returning false now and new users (as well as users who deleted all their numbers) can now be prompted to enter a new phone number.</p>
+    <p>Phew.</p>
+    <p>Turns out JavaScript has a method that returns <code>true</code> on empty arrays and another method that returns <code>false</code>.</p>
+    <h3>Why? When would returning true when checking an empty array ever make sense?!</h3>
+    <p>I'm glad you asked. This isn't just some quirk of JavaScript. It makes sense quite often actually!</p>
+    <p>Like you, if you've never seen this before, <code>.every()</code> was my first foray into real life examples of vacuous truth!</p>
+    <p>A few years ago, I scoffed at it, frustrated beyond belief. How could anyone possibly think this was a good idea?</p>
+    <p>Then my mentor sent me some reading material.</p>
+    <p><b>Vacuous Truths</b> are conditional statements that are true because the supposition for them can't be proven true itself.</p>
+    <p>Basically if you can't prove the thing you're checking your conditional statement against, your conditional statement has no choice but to be true.</p>
+    <p>"Yeah right, Stu, I'll believe you when pigs fly!" Correct!</p>
+    <h3>How .every() is used</h3>
+    <p>The truth is, we actually all have heard of, and can probably think of examples throughout our life that are vacuous truths! Let's put it into terms that are easier to digest:</p>
+    <ul>
+        <li>All eggs in this (empty) basket are blue.</li>
+        <li>All humans on Venus have green shirts.</li>
+        <li>Every dragon loves milk.</li>
+    </ul>
+    <h3>Final Verdict</h3>
+    <p>Ok, you've made it this far. Bare with me just a little longer!</p>
+    <p>The whole point of this is to show you that <code>.every()</code> isn't just some after effect of poor thinking during the creation of JavaScript, but a true featuer!</p>
+    <p>It's a feature in many other languages too! What's more, it's </p>

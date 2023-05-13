@@ -3,11 +3,27 @@ body {
     color: #F7EBEC;
     font-family: 'Courier New', monospace;
     width: 85%;
+    max-width: 59em;
     margin: 2em auto;
 }
 
-p{
+p {
     background-color: #3B424E;
     border-radius: 3px;
     padding: 5px;
+    margin: 15px;
+}
+
+a {
+    color: #DDBDD5;
+}
+
+a:visited {
+    color: #AC9FBB;
+}
+
+code {
+    background-color: #59656F;
+    padding: 2px;
+    border-radius: 2px;
 }
