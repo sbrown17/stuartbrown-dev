@@ -5,4 +5,4 @@ https://bt.ht/
 https://zverok.space/
 
 colors:
-https://coolors.co/f7ebec-ddbdd5-ac9fbb-59656f-1d1e2c
+https://coolors.co/f7ebec-ddbdd5-ac9fbb-59656f-3b424e-1d1e2c
